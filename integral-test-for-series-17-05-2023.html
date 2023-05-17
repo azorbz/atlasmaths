@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Divergence Test</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Integral Test For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Integral Test for series is a test for checking if a series converges by comparing it to a continuous function. The test states that:
+                </p>
+                <p>
+                    Suppose $f(x)$ is a continuous, positive, decreasing function on an interval $[m, \infty)$, and that $f(n) = a_n$, then:
+                </p>
+                <ul>
+                    <li>If $\int_{m}^{\infty}f(x)dx$ is convergent then $\sum_{n=m}^{\infty}a_n$ is also convergent</li>
+                    <li>If $\int_{m}^{\infty}f(x)dx$ is divergent then $\sum_{n=m}^{\infty}a_n$ is also divergent</li>
+                </ul>
+                <p>
+                    Further, it is true that, for any $N \geq m$, the series evaluated from $N$ to $\infty$ is bounded by: $$\int_{N+1}^{\infty}f(x)dx \leq \sum_{n=N}^{\infty} a_n \leq \int_{N}^{\infty}f(x)dx$$
+                </p>
+                <p>
+                    More generally (here $m$ is an integer greater than or equal to the $m$ from which $f$ is defined), $$\int_{m+1}^{n+1}f(x)dx \leq \sum_{k=m+1}^{n}a_k \leq \int_{m}^{n}f(x)dx$$
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    Note that since $f$ is decreasing, $f(n+1) < \int_{n}^{n+1}f < f(n)$, and further $\int_{m}^{\infty} f = \lim_{t \rightarrow \infty} \int_{m}^{t}f = \sum_{n=m}^{\infty}\int_{n}^{n+1}f$. The convergence of the improper integral is dependent on the convergent of the series.
+                </p>
+                <p>
+                    First, we will consider the left side of the inequality, namely that $f(n+1) < \int_{n}^{n+1}f$. This means that: $$a_{n+1} < \int_{n}^{n+1}f$$
+
+                    $$\implies \sum_{n=m}^{\infty}a_{n+1} \leq \sum_{n=m}^{\infty}\int_{n}^{n+1}f = \int_{m}^{\infty}f$$
+                </p>
+                <p>
+                    By the <a href="comparison-test-for-series-14-05-2023.html">Comparison Test</a>, $\sum a_{n+1}$ converges if $\sum_{n=m}^{\infty}\int_{n}^{n+1}f$ converges. Since the sum is equal to $\int_{m}^{\infty}f$, $\sum a_{n+1}$ converges if $\int_{m}^{\infty}f$ converges. By the Shift Property of series, this also means that $\sum a_{n}$ converges if $\int_{m}^{\infty}f$ converges.
+                </p>
+                <p>
+                    Now, for the right side ($\int_{n}^{n+1}f < f(n)$), since $f(n) = a_n$, $$\int_{n}^{n+1}f <  a_n$$
+
+                    $$\implies \int_{m}^{\infty}f = \sum_{n=m}^{\infty}\int_{n}^{n+1}f \leq \sum_{n=m}^{\infty}a_n$$
+                </p>
+                <p>
+                    By the <a href="comparison-test-for-series-14-05-2023.html">Comparison Test</a>, $\sum_{n=m}^{\infty}a_n$ diverges is $\int_{m}^{\infty}f$ diverges.
+                </p>
+                <p>
+                    For the bounds of the series, the lower bound is simple to prove. Since $\int_{n}^{n+1}f < a_n$, clearly $$\sum_{k=m+1}^{n}\int_{k}^{k+1} = \int_{m+1}^{n+1}f \leq \sum_{k=m+1}^{n}a_n$$
+                </p>
+                <p>
+                    The upper bound is also simple to prove. As stated before, $a_{n+1} < \int_{n}^{n+1}f$, and so $a_n < \int_{n-1}^{n}f$, therefore $$\sum_{k=m+1}^{n}a_n \leq \int_{m}^{n}f = \sum_{k=m+1}^{n}\int_{k-1}^{k}f$$
+
+                    $$\implies \int_{m+1}^{n+1}f \leq \sum_{k=m+1}^{n}a_n \leq \int_{m}^{n}f$$
+                </p>
+                <p>
+                    The infinite bounds follow simply by taking the proper integrals to infinity.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/integraltestforseries.pdf" download="integraltest">here</a>.
+                </p>
+                <p>
+                    Related pages:
+                </p>
+                <ul>
+                    <li><a href="comparison-test-for-series-14-05-2023.html">Comparison Test</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

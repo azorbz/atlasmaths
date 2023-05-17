@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Geometric Series</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Proof Of The Infinite Sum Of A Geometric Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    Before the proof begins, first we will define what sort of series is being considered. The sums in question are of the form $$\sum_{i=1}^{\infty}ar^{i-1}$$
+                </p>
+                <p>
+                    As is clear from the series, $a$ denotes the initial value of the sequence $(a_n)$ which is being summed ($a_n = a r^{n+1}$) since $a_1 = a r^{0} = a$, and $r$ is the ratio between successive terms in the sequence ($\frac{a_{n+1}}{a_n} = r$).
+                </p>
+                <p>
+                    As an example, consider the sequence $4, 12, 36,...$. $a$ would be $4$, since the first value in the sequence is $4$, and the ratio between any two successive terms is $r = 3$.
+                </p>
+            </section>
+            <section>
+                <h2>Finite (Partial) Sum</h2>
+                <p>
+                    The $n$th partial sum of a series is the sum of the first $n$ terms in the sequence. Therefore, we can express the $n$th partial sum of a sequence, $(a_n)$, as $$\sum_{i=1}^{n}a_n$$
+                </p>
+                <p>
+                    Our goal is to express the $n$th partial sum of a geometric series. To do so, for ease of notation, let $S_n := \sum_{i=1}^{n}ar^{i-1}$. By definition, $S_n = a + ar + ar^{2} + ... + ar^{n-1}$. If we subtract the first term and divide by $r$, we get the $n-1$th partial sum ($\frac{S_n-a}{r} = a + ar + ... + ar^{n-2} = S_{n-1}$). We also get the $n-1$th partial sum if we instead simply subtract the final term of the series ($S_n - ar^{n-1} = a + ar + ... + ar^{n-2} = S_{n-1}$). Because these are equivalent, we can say that $$\frac{S_n - a}{r} = S_n - ar^{n-1}$$
+                    $$\implies S_n - a = rS_n - ar^n$$
+                    $$\implies S_n - rS_n = a - ar^n$$
+                    $$\implies S_n(1-r) = a(1 - r^n)$$
+                    $$\implies S_n = \frac{a(1-r^n)}{1-r}$$
+                    This gives us our desired result of a formula for the $n$th partial sum, where $$\sum_{i=1}^{n}ar^{i-1} = \frac{a(1-r^n)}{1-r}$$
+                </p>
+                <p>
+                    This case only works if $r \neq 1$; however, it is trivial to find the $n$th partial sum in this case since all entries of the sequence are $a$, meaning that the $n$th partial sum is equal to $an$.
+                </p>
+                <p>
+                    For one example, consider the example sequence from the introduction. The third partial sum of the series is equal to $S_3 = 4+12+36 = 52$. Substituting the values of $a,r,n$ into the formula we derived gives $S_3 = \frac{4(1-3^3)}{1-3} = \frac{4(-26)}{-2} = 2(26) = 52$.
+                </p>
+            </section>
+            <section>
+                <h2>Infinite Sum</h2>
+                <p>
+                    Before we derive a formula for the infinite series, it is important to first consider when the series converges. The method that will be used here is the <a href="ratio-test-for-series-13-05-2023.html">Ratio Test</a>. The test states that if $\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = L$ then the following is true:
+                </p>
+                <ul>
+                    <li>$L < 1$, the series converges absolutely</li>
+                    <li>$L > 1$, the series diverges</li>
+                    <li>$L = 1$, the test is inconclusive</li>
+                </ul>
+                <p>
+                    Applying the Ratio Test to our geometric series gives $$\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = \lim_{n\rightarrow \infty} \frac{|ar^{n}|}{|ar^{n-1}|}$$
+                    $$\implies \lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} =|r| = L$$
+                </p>
+                <p>
+                    Since $L = |r|$, we know that geometric series converges absolutely if $|r| < 1$, diverges if $|r| > 1$. The case of $L = 1$ occurs only when $r = \pm 1$ and if $r = 1$ then, unless $a = 0$, the series diverges. Because of this, we will only consider the case where $|r| < 1$.
+                </p>
+                <p>
+                    The infinite series can be defined as the limit of the partial sums. That is to say that $$\sum_{i=1}^{\infty}ar^{i-1} := \lim_{n\rightarrow \infty} \sum_{i=1}^{n}ar^{i-1}$$
+                    Since we already know an expression for the partial sum, we can alternatively write this as $$\sum_{i=1}^{\infty}ar^{i-1} = \lim_{n\rightarrow \infty} \frac{a(1-r^{n})}{1-r}$$
+                    Since we are only considering the case of $|r| < 1$, we know that the $\lim_{n\rightarrow \infty} r^n = 0$.
+                    $$\implies \sum_{i=1}^{\infty}ar^{i-1} = \frac{a(1-0)}{1-r} = \frac{a}{1-r}$$
+                    Which is the final answer.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/infinitegeometricseries.pdf" download="infinitegeometricseries">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

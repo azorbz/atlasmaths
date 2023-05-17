@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Comparison Test</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Comparison Test For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Comparison Test for series is a method of determining whether a series converges by comparing it to a series that you already know converges / diverges. The Comparison Test states two things.
+                </p>
+                <ul>
+                    <li>If for some $N \in \mathbb{N}$, $0 \leq a_n \leq b_n$ for all $n \geq N$ and $\sum_{n=1}^{\infty}b_n$ converges, then $\sum_{n=1}^{\infty}a_n$ also converges</li>
+                    <li>If for some $N \in \mathbb{N}$, $a_n \geq b_n \geq 0$ for all $n \geq N$ and $\sum_{n=1}^{\infty}b_n$ diverges, then $\sum_{n=1}^{\infty}a_n$ also diverges</li>
+                </ul>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    Note that the first statement is the contra-positive of the second; thus, it is sufficient to prove just one statement. In this resource, the first will be proved.
+                </p>
+                <p>
+                    Let $B$ denote the value of the value of $\sum_{n=1}^{\infty}b_n$ with $B_n$ denoting the $n$th partial sum, and let $A_n$ be the $n$th partial sum of $\sum_{n=1}^{\infty}a_n$.
+                </p>
+                <p>
+                    Note that, since term $a_n \geq 0$, $A_n$ is increasing ($A_n \leq A_{n+1}$ for all $n$), meaning that $A_n$ is a monotonic sequence. The same is true for $B_n$. Since $B_n$ is increasing, clearly $B_n \leq B$ for all $n$. Further, since $a_n \leq b_n$ for all $n$, it must also be true that $A_n \leq B$.
+                </p>
+                <p>
+                    This means that the sequence $A_n$ is bounded. Since $A_n$ is both bounded and monotonic, by the Monotone Convergence Theorem, $A_n$ must converge and, as $A_n$ is the sequence representing the $n$th partial sum of $\sum_{n=1}^{\infty}a_n$, the sum must also converge.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/comparisontest.pdf" download="comparisontest">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

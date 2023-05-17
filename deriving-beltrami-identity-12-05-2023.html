@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>The Beltrami Identity</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Deriving The Beltrami Identity</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Beltrami Identity is a reduction of the Euler-Lagrange Equation where the function, $F$, does not explicitly depend on $x$ ($\frac{\partial F}{\partial x} = 0$) in the functional $$I = \int_{x_1}^{x_2}F(x, y, y')dx$$
+                </p>
+                <p>
+                    The Beltrami Identity states that, if $F$ is autonomous, then the solution satisfies $$F - y' \frac{\partial F}{\partial y'} = C \text{, where }C\text{ is a constant}$$
+                </p>
+            </section>
+            <section>
+                <h2>Proof</h2>
+                <p>
+                    First, we will state the Euler-Lagrange Equation:
+
+                    $$\frac{\partial F}{\partial y} - \frac{d}{dx}\left(\frac{\partial F}{\partial y'} \right) = 0$$
+                </p>
+                <p>
+                    $$\implies y' \frac{\partial F}{\partial y} - y' \frac{d}{dx}\left(\frac{\partial F}{\partial y'} \right) = 0\text{ (Equation A)}$$
+                </p>
+                <p>
+                    Now, we will take the total derivative of $F$ with respect to $x$ (noting that $y$ and $y'$ are both functions of $x$) by the Chain Rule:
+                </p>
+                <p>
+                    $$\frac{dF}{dx} = \frac{\partial F}{\partial x} + y'\frac{\partial F}{\partial y} + y'' \frac{\partial F}{\partial y'}$$
+                    $$\implies y'\frac{\partial F}{\partial y} = \frac{dF}{dx} - \frac{\partial F}{\partial x} - y'' \frac{\partial F}{\partial y'} \text{ (Equation B)}$$
+                </p>
+                <p>
+                    Substituting Equation B into Equation A gives:
+
+                    $$\frac{dF}{dx} - \frac{\partial F}{\partial x} - y'' \frac{\partial F}{\partial y'} -y'\frac{d}{dx}\left(\frac{\partial F}{\partial y'} \right) = 0$$
+                </p>
+                <p>
+                    $$\implies \frac{dF}{dx} - \frac{\partial F}{\partial x} - \left[y'' \frac{\partial F}{\partial y'} + y'\frac{d}{dx}\left(\frac{\partial F}{\partial y'} \right)\right] = 0$$
+                </p>
+                <p>
+                    The expression in the square brackets can be simplified by applying the Inverse Chain Rule
+                </p>
+                <p>
+                    $$\implies \frac{dF}{dx} - \frac{\partial F}{\partial x} - \frac{d}{dx}\left(y' \frac{\partial F}{\partial y'}\right) = 0$$
+
+                    $$\implies \frac{dF}{dx} - \frac{d}{dx}\left(y' \frac{\partial F}{\partial y'}\right) = \frac{\partial F}{\partial x}$$
+                </p>
+                <p>
+                    Given that $F$ does not explicitly depend on $x$, $\frac{\partial F}{\partial x} = 0$
+                </p>
+                <p>
+                    $$\implies \frac{dF}{dx} - \frac{d}{dx}\left(y' \frac{\partial F}{\partial y'}\right) = 0$$
+
+                    $$\implies \frac{d}{dx}\left( F - y' \frac{\partial F}{\partial y'}\right) = 0$$
+
+                    $$\implies  F - y' \frac{\partial F}{\partial y'} = C$$
+                </p>
+                <p>
+                    Which is the Beltrami Identity.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/beltramiidentity.pdf" download="beltramipdf">here</a>.
+                </p>
+                <p>
+                    To download this webpage in the fomr of handwritten notes, click <a href="downloads/beltramiidentity.png" download="beltramipng">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

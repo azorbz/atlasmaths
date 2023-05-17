@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Divergence Test</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Divergence Test For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Divergence Test for series is a simple method of checking to see if a series diverges. It can be stated in two ways. The first states that a series, $\sum_{n=1}^{\infty}a_n$, diverges if $\lim_{k\rightarrow\infty} a_k \neq 0$. Note that the inverse is not true (the divergence of a series does not imply that the sequence does not converge to zero).
+                </p>
+                <p>
+                    Alternatively, if the series converges then $\lim_{k\rightarrow\infty}a_k = 0$. This statement is the contra-positive statement of the first statement, and thus proving one proves the other.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    We will prove the second statement which ultimately proves both.
+                </p>
+                <p>
+                    Assume that $\sum_{n=1}^{\infty}a_n$ is a convergent series. Let $S$ denote the value to which the series converges ($\sum_{n=1}^{\infty}a_n := S$).
+                </p>
+                <p>
+                    Let $s_n$ denote the $n$th partial sum of the series, meaning that: $$s_n = \sum_{k=1}^{n}a_n$$
+
+                    $$\implies s_{n-1} = \sum_{k=1}^{n-1}a_n$$
+                </p>
+                <p>
+                    Note that the difference between $s_n$ and $s_{n-1}$ is $a_n$ since $s_n - s_{n-1} = (a_1 + a_2 + ... + a_n) - (a_1 + a_2 + ... + a_{n-1}) = a_n$.
+                </p>
+                <p>
+                    Since $s_n$ and $s_{n-1}$ are the $n$th partial sum of the infinite series, $$\lim_{n\rightarrow\infty} s_n = \lim_{n\rightarrow\infty}s_{n-1} = S$$
+
+                    $$\implies \lim_{n\rightarrow\infty} [s_n - s_{n-1}] = \lim_{n\rightarrow\infty} s_n - \lim_{n\rightarrow\infty} s_{n-1}$$
+
+                    $$\implies \lim_{n\rightarrow\infty} [s_n - s_{n-1}] = S - S = 0$$
+                </p>
+                <p>
+                    As we had previously established, $s_n - s_{n-1} = a_n$, and thus $$\lim_{n\rightarrow\infty} a_n = \lim_{n\rightarrow\infty} [s_n - s_{n-1}] = 0$$
+                </p>
+                <p>
+                    Therefore, if $\sum_{n=1}^{\infty}a_n$ converges, then $(a_n) \rightarrow 0$.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/divergencetest.pdf" download="divergencetest">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
