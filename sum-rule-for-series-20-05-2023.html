@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Sum Rule</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Sum Rule For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Sum Rule is a basic rule for the convergence of series. It states that the series $\sum_{n=1}^{\infty}(a_n + b_n)$ converges if $\sum_{n=1}^{\infty}a_n$ and $\sum_{n=1}^{\infty}b_n$ converges.
+                </p>
+                <p>
+                    It is important to note that the reverse is not true. An example of this can be found at the bottom of the page.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    Suppose that $\sum_{n=1}^{\infty}a_n$ and $\sum_{n=1}^{\infty}b_n$ converge to the values $A$ and $B$ respectively.
+                </p>
+                <p>
+                    By the definition of an infinite series as the limit of partial sums,$$\sum_{n=1}^{\infty}(a_n + b_n) = \lim_{k\rightarrow\infty}\sum_{n=1}^{k}(a_n + b_n)$$
+                </p>
+                <p>
+                    Since $\sum_{n=1}^{k}(a_n + b_n)$ is a finite sum, it can be separated into two separate sums,$$\implies \sum_{n=1}^{\infty}(a_n + b_n) = \lim_{k\rightarrow\infty}\left(\sum_{n=1}^{k}a_n + \sum_{n=1}^{k}b_n\right)$$
+                    $$\implies \sum_{n=1}^{\infty}(a_n + b_n) = \lim_{k\rightarrow\infty}\sum_{n=1}^{k}a_n +\lim_{k\rightarrow\infty} \sum_{n=1}^{k}b_n$$
+                    $$\implies \sum_{n=1}^{\infty}(a_n + b_n) = A + B$$
+                </p>
+                <p>
+                    This means that $\sum_{n=1}^{\infty}(a_n + b_n)$ converges if $\sum_{n=1}^{\infty}a_n$ and $\sum_{n=1}^{\infty}b_n$ converges, as desired.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Counter-Example
+                </h2>
+                <p>
+                    Consider the two sequences, $a_n = n$ and $b_n = -n$. Clearly, the infinite sum of $a_n$ and $b_n$ both diverge. However, $a_n + b_n = 0$, and thus the series of the sum of the two sequences converges to $0$
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/sumrule.pdf" download="sumrule">here</a>.
+                </p>
+                <p>
+                    Related pages:
+                </p>
+                <ul>
+                    <li><a href="shift-rule-for-series-20-05-2023.html">Shift Rule</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

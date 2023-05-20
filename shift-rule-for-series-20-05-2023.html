@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Shift Rule</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Shift Rule For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Shift Rule is a simple rule for the convergence of series. It states that, letting $N \in \mathbb{N}$, $\sum_{n=1}^{\infty}a_n$ converges if and only if $\sum_{n=1}^{\infty}a_{N+n}$ converges.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    First, we will prove that $\sum_{n=1}^{\infty}a_{N+n}$ converges if $\sum_{n=1}^{\infty}a_n$ converges.
+                </p>
+                <p>
+                    Suppose $\sum_{n=1}^{\infty}a_n$ converges, and let $A$ denote the value to which $\sum_{n=1}^{\infty}a_n$ converges.
+                </p>
+                <p>
+                    Note that the series can be rewritten as $$\sum_{n=N+1}^{\infty}a_n = \sum_{n=1}^{\infty}a_{N+n}$$
+                </p>
+                <p>
+                    This means that the sum we know converges can be expressed  as $$\sum_{n=1}^{\infty}a_n = \sum_{n=1}^{N}a_n + \sum_{n=N+1}^{\infty}a_n$$
+                </p>
+                <p>
+                    Since the sum from $1$ to $N$ is the sum of a finite number of finite terms, the sum itself must be finite. Let $C$ denote the value of this sum. Since the left side of the equality converges, we can replace it with its value to get $$A = C + \sum_{n=N+1}^{\infty}a_n$$
+                    $$\implies \sum_{n=N+1}^{\infty}a_n = A-C$$
+                </p>
+                <p>
+                    Since the left side is also $\sum_{n=1}^{\infty}a_{N+n}$, $$\sum_{n=1}^{\infty}a_{N+n} = A-C$$
+                </p>
+                <p>
+                    $A-C$ is finite, and thus $\sum_{n=1}^{\infty}a_{N+n}$ converges if $\sum_{n=1}^{\infty}a_n$ converges.
+                </p>
+                <p>
+                    Now to prove that $\sum_{n=1}^{\infty}a_{n}$ converges if $\sum_{n=1}^{\infty}a_{N+n}$ converges.
+                </p>
+                <p>
+                    Suppose $\sum_{n=1}^{\infty}a_{N+n}$ converges, and let $B$ denote the value to which it converges.
+                </p>
+                <p>
+                    As shown before, the two sums can be expressed as $$\sum_{n=1}^{\infty}a_n = \sum_{n=1}^{N}a_n + \sum_{n=N+1}^{\infty}a_n$$
+                    $$\implies \sum_{n=1}^{\infty}a_n = \sum_{n=1}^{N}a_n + \sum_{n=1}^{\infty}a_{N+n}$$
+                </p>
+                <p>
+                    As before, let $C$ denote the value of $\sum_{n=1}^{N}a_n$ which is finite.
+                    $$\implies \sum_{n=1}^{\infty}a_n = C + B$$
+                </p>
+                <p>
+                    Therefore, if $\sum_{n=1}^{\infty}a_{N+n}$ converges, then so does $\sum_{n=1}^{\infty}a_{n}$.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/shiftrule.pdf" download="shiftrule">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
