@@ -695,7 +695,3 @@ li.title-item {
     display: flex;
     margin-bottom: 20px;
 }
-
-.equation {
-    white-space:nowrap;
-}
