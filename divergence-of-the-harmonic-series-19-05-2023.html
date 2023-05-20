@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Harmonic Series</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Harmonic Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Harmonic Series is a series defined as the sum of the sequence $a_n = \frac{1}{n}$, $$\sum_{k=1}^{\infty}\frac{1}{k}$$
+                </p>
+                <p>
+                    The most important property of the Harmonic Series is that, despite $(a_n)\rightarrow 0$, the series diverges (an important fact when proving the inconclusiveness of the $L=1$ case of the <a href="ratio-test-for-series-13-05-2023.html">Ratio Test</a>).
+                </p>
+                <p>
+                    There are multiple methods that can be used to prove the divergence of the Harmonic Series, and only a couple will be shown here.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Method 1
+                </h2>
+                <p>
+                    Let $s_n$ denote the $n$th partial sum of the Harmonic Series. That is to say that $$s_n = \sum_{k=1}^{n}\frac{1}{k}$$
+                </p>
+                <p>
+                    Note that $s_4 - s_2$ is greater than $1/2$. This is clearly true since $$s_4-s_2 = \frac{1}{3} + \frac{1}{4} > 2\left(\frac{1}{4}\right) = \frac{1}{2}$$
+                </p>
+                <p>
+                    The same is also true for $s_8 - s_4$ as each term of $a_n$ from n=5 to n=8 is greater than or equal to $\frac{1}{8}$, and there are four terms and thus $$s_8 - s_4 > 4\left(\frac{1}{8}\right) = \frac{1}{2}$$
+                </p>
+                <p>
+                    In general, it is simple to see that for any integer $m \geq 1$, $s_{2^{m+1}} - s_{2^m} > \frac{1}{2}$. Taking the sum of these terms which are greater than $\frac{1}{2}$ gives $$s_1 + \sum_{k=0}^{m}s_{2^{k+1}} - s_{2^k} \geq s_1 + \sum_{k=0}^{m}\frac{1}{2}=\frac{m+3}{2}$$
+                </p>
+                <p>
+                    Since the left series subtracts the previous partial sum to a power of two, the series can be simplified to $$\sum_{k=1}^{2^{m+1}}\frac{1}{k} \geq \frac{m+3}{2}$$
+                </p>
+                <p>
+                    Note that as $m\rightarrow \infty$, the left sum approaches the Harmonic Series and therefore $$\lim_{m\rightarrow\infty}\sum_{k=1}^{2^{m+1}}\frac{1}{k} = \sum_{k=1}^{\infty}\frac{1}{k} \geq \lim_{m\rightarrow\infty}\frac{m+3}{2}$$
+                </p>
+                <p>
+                    Clearly, the right side of the inequality diverges, meaning that the left side must also diverge, and thus the Harmonic Series diverges.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Method 2: Integral Test
+                </h2>
+                <p>
+                    As seen in the section on the <a href="integral-test-for-series-17-05-2023.html">Integral Test</a>, $\sum_{k=1}^{\infty}\frac{1}{k}$ diverges if the integral $\int_{1}^{\infty}\frac{dx}{x}$ diverges.
+
+                    $$\int_{1}^{\infty}\frac{dx}{x} = \lim_{t\rightarrow\infty}\int_{1}^{t}\frac{dx}{x}$$
+
+                    $$\implies \int_{1}^{\infty}\frac{dx}{x} =  \lim_{t\rightarrow\infty} [\ln{|x|}]_{x=1}^{x=t}$$
+
+                    $$\implies \int_{1}^{\infty}\frac{dx}{x} =  \lim_{t\rightarrow\infty} \ln{|t|} - \ln{1}$$
+
+                    $$\implies \int_{1}^{\infty}\frac{dx}{x} =  \lim_{t\rightarrow\infty} \ln{|t|}$$
+                </p>
+                <p>
+                    $\ln{|t|} \rightarrow \infty$ as $t \rightarrow \infty$, and thus the integral $\int_{1}^{\infty}\frac{dx}{x}$ diverges. Applying the Integral Test, this means that the Harmonic Series also diverges.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/harmonicseries.pdf" download="harmonicseries">here</a>.
+                </p>
+                <p>
+                    Related pages:
+                </p>
+                <ul>
+                    <li><a href="comparison-test-for-series-14-05-2023.html">Comparison Test</a></li>
+                    <li><a href="ratio-test-for-series-13-05-2023.html">Ratio Test</a></li>
+                    <li><a href="integral-test-for-series-17-05-2023.html">Integral Test</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
