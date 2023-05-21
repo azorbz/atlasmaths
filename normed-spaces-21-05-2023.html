@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Normed Spaces</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Normed Spaces</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Definition Of A Normed Space
+                </h2>
+                <p>
+                    If $X$ is a vector space and $||\cdot||$ is a norm on $X$ then the pair $(X, ||\cdot||)$ is said to be a Normed Space.
+                </p>
+                <p>
+                    It is common to simply refer to the "normed space of $X$" when referring to the normed space $(X, ||\cdot||)$ where $||\cdot||$ is the typical norm on $X$. For instance, when dealing with $\mathbb{R}^n$, it is usual to refer to $(\mathbb{R}^n, ||\cdot||_2)$ as "the normed space of $\mathbb{R}^n$.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Convex Sets
+                </h2>
+                <p>
+                    Let $X$ be a vector space. A subset of $X$, $K \subset X$, is said to be convex if when $x,y\in K$ and $0 \leq \lambda \leq 1$, $\lambda x + (1 - \lambda)y \in K$.
+                </p>
+                <p>
+                    Less formally, $K$ is convex if the line segment connecting any two points in $K$ is fully contained within $K$.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Closed (Unit) Ball In $(X, ||\cdot||)$
+                </h2>
+                <p>
+                    The Closed (Unit) Ball in $(X, ||\cdot||)$ is defined as $$\mathcal{B}_X := \{x \in X: ||x|| \leq 1\}$$
+                </p>
+                <p>
+                    Lemma: In any normed space $(X, ||\cdot||)$, the Closed Unit Ball $\mathcal{B}_X$ is convex.
+                </p>
+                <p>
+                    To prove this, suppose that $(X, ||\cdot||)$ is a normed space with $\mathcal{B}_X$ the Closed Unit Ball in the normed space.
+                </p>
+                <p>
+                    Let $x,y\in\mathcal{B}_X$.By definition, $||x|| \leq 1, ||y|| \leq 1$. For any $0 \leq \lambda \leq 1$, we have$$||\lambda x + (1 - \lambda)y|| \leq |\lambda|||x|| + |1 - \lambda|||y|| \leq \lambda + (1 - \lambda) = 1$$
+                </p>
+                <p>
+                    Since $||\lambda x + (1 - \lambda)y|| \leq 1$, it must be in $\mathcal{B}_X$, and thus $\mathcal{B}_X$ is convex.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Balls Prove Norms
+                </h2>
+                <p>
+                    Lemma: Suppose that a function, $N: X \rightarrow \mathbb{R}^{+}$, satisfies the first two criteria to be a norm (discussed in the <a href="introducing-norms-21-05-2023.html">Introducing Norms</a> section), and the set $\mathcal{B}:= \{x\in X: N(x) \leq 1 \}$ is convex. Then $N$ satisfies the Triangle Inequality and is thus a norm.
+                </p>
+                <p>
+                    Proof:
+                </p>
+                <p>
+                    Suppose that the function $N: X\rightarrow \mathbb{R}^{+}$ satisfies the above conditions, and $\mathcal{B}:= \{x\in X: N(x) \leq 1 \}$.
+                </p>
+                <p>
+                    Let $x,y \in X$ such that $N(x) > 0, N(y) > 0$. The points $\frac{x}{N(x)}, \frac{y}{N(y)}\in\mathcal{B}$. Since $\mathcal{B}$ is convex, we know that$$\frac{N(x)}{N(x)+N(y)}\left(\frac{x}{N(x)}\right) + \frac{N(y)}{N(x) + N(y)}\left(\frac{y}{N(y)}\right)\in \mathcal{B}$$
+                </p>
+                <p>
+                    By Homogeneity, we know that $N\left(\frac{1}{N(x) + N(y)}k\right) = \frac{1}{N(x) + N(y)}N(k)$ for all $k \in X$. $$\implies N\left(\frac{x+y}{N(x)+N(y)}\right) = \frac{N(x+y)}{N(x) + N(y)} \leq 1$$
+                    $$\implies N(x+y) \leq N(x) + N(y)$$
+                </p>
+                <p>
+                    And thus $N$ satisfies the Triangle Inequality. Further, since $N$ satisfies all three conditions to be a norm, $N$ is a norm of $X$.
+                </p>
+                <p>
+                    Note that when trying to apply this lemma, it is often necessary to show that a real-valued function is convex. A function $f: [a,b]\rightarrow\mathbb{R}$ is said to be convex if, for all $x,y \in[a,b]$, $f(tx + (1-t)y) \leq tf(x) + (1-t)f(y)$. A sufficient condition for $f\in C^2((a,b))\cap C^1([a,b])$ is that $f''(x) \geq 0$ for all $x\in(a,b)$.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/normedspaces.pdf" download="normedspaces">here</a>.
+                </p>
+                <p>
+                    Related Pages:
+                </p>
+                <ul>
+                    <li><a href="introducing-norms-21-05-2023.html">Introducing Norms</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Introducing Norms</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Introducing Norms</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Definition Of Norms
+                </h2>
+                <p>
+                    A norm of a vector space can be thought of as defining the length of any vector in that vector space.
+                </p>
+                <p>
+                    A norm on a vector space $X$ is a map, $||\cdot||: X \rightarrow \mathbb{R}$ satisfying:
+                </p>
+                <ol>
+                    <li>$||x|| = 0 \iff x = 0$</li>
+                    <li>$||\lambda x|| = |\lambda| ||x||$, for all $\lambda \in \mathbb{R}$ and $x\in X$</li>
+                    <li>$||x + y|| \leq ||x|| + ||y||$ for all $x,y \in X$</li>
+                </ol>
+                <p>
+                    The second criterion is commonly referred to as "Homogeneity", and the third is the Triangle Inequality.
+                </p>
+                <p>
+                    It is usual for a vector space to have a typical (standard) norm.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Euclidean Norm
+                </h2>
+                <p>
+                    The Euclidean Norm is the standard norm of $\mathbb{R}^{n}$. It is usually denoted in one of three ways: $||\cdot||, ||\cdot||_{2}, ||\cdot||_{\ell^{p}}$. The Euclidean Norm, $||\cdot||_2: \mathbb{R}^{n} \rightarrow \mathbb{R}$, is defined as $$||x||_2 := \left(\sum_{j=1}^{n}|x_j|^2\right)^{\frac{1}{2}}$$
+                </p>
+                <p>
+                    Proving that it is a norm is fairly simple. For the first criteria, this is true since all $|x_j| \geq 0$ and $|x_j| = 0 \implies x_j = 0$, and thus the Euclidean Norm is zero if and only if $x = 0$.
+                </p>
+                <p>
+                    To prove Homogeneity, suppose $\lambda \in \mathbb{R}$ and $x \in \mathbb{R}^{n}$. We have that $$||\lambda x||_2 = \left(\sum_{j=1}^{n}|\lambda x_j |^2\right)^\frac{1}{2}$$
+                    $$\implies ||\lambda x||_2 = \left(\sum_{j=1}^{n}|\lambda|^2 |x_j |^2\right)^\frac{1}{2}$$
+                    $$\implies ||\lambda x||_2 = |\lambda|\left(\sum_{j=1}^{n} |x_j |^2\right)^\frac{1}{2} = |\lambda| ||x||_2$$
+                </p>
+                <p>
+                    Proving the Triangle Inequality is typically the hardest condition to prove, but it is not too much trouble for the Euclidean Norm. Note that for $x,y\in\mathbb{R}^n$, $||x + y||_2 = (x+y) \cdot (x+y)$  and thus $$||x + y||_2^2 = ||x||_2^2 + 2( x \cdot y ) + ||y||_2^2$$
+                    $$\implies ||x + y||_2^2 \leq ||x||_2^2 + 2 ||x||_2 ||y||_2 + ||y||_2^2$$
+                    $$\implies ||x + y||_2^2 \leq (||x||_2 + ||y||_2)^2$$
+                </p>
+                <p>
+                    Since the Euclidean Norm satisfies all criteria, it is a norm as expected.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Other Norms On $\mathbb{R}^n$
+                </h2>
+                <p>
+                    The Euclidean Norm, whilst the standard norm on $\mathbb{R}^n$, is not the only norm on $\mathbb{R}^n$. As will be explored in the section on $\ell^p$ Norms, there exist norms denoted by $||\cdot||_{\ell^p}$ on $\mathbb{R}^n$.
+                </p>
+                <p>
+                    One instance of these $\ell^p$ Norms is $$||x||_{\ell^1}:=\sum_{j=1}^{n}|x_j|$$
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/introducingnorms.pdf" download="introducingnorms">here</a>.
+                </p>
+                <p>
+                    Related Pages:
+                </p>
+                <ul>
+                    <li><a href="normed-spaces-21-05-2023.html">Normed Spaces</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
