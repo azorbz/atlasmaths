@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>p-Test</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>p-Test For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The p-Test For Series is a condition for the convergence of series of the form $\sum_{n=1}^{\infty}\frac{1}{n^p}$. If $p > 1$, the series converges; if $p \leq 1$, the series diverges.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    The method by which this will be proven is the <a href="integral-test-for-series-17-05-2023.html">Integral Test</a>.
+                </p>
+                <p>
+                    The series $\sum_{n=1}^{\infty}\frac{1}{n^p}$ converges if the following integral converges (and diverges if the integral diverges), $$\int_{1}^{\infty}\frac{dx}{x^p}$$
+                    $$\int_{1}^{\infty}\frac{dx}{x^p} = \lim_{t\rightarrow\infty}\int_{1}^{t}\frac{dx}{x^p}$$
+                    $$\implies \int_{1}^{\infty}\frac{dx}{x^p} = \lim_{t\rightarrow\infty}\left[\frac{1}{1-p}x^{1-p}\right]_{1}^{t}$$
+                    $$\implies \int_{1}^{\infty}\frac{dx}{x^p} = \lim_{t\rightarrow\infty}\frac{1}{1-p}t^{1-p}-\frac{1}{1-p}$$
+                </p>
+                <p>
+                    The right side converges if $p > 1$ since the exponent of $t$ will be less than zero (and therefore $\lim_{t\rightarrow\infty}t^{1-p} converges$). The right side diverges if $p < 1$ since the exponent of $t$ will be greater than $0$ (the limit diverges by similar logic).
+                </p>
+                <p>
+                    For $p=1$, the integral instead evaluates to $\lim_{t\rightarrow\infty}\ln{|t|}$ which diverges, and thus the integral diverges if $p \leq 1$ (the divergence of this particular series is expanded upon in the section on the <a href="divergence-of-the-harmonic-series-19-05-2023.html">Harmonic Series</a>).
+                </p>
+                <p>
+                    Since the integral diverges if $p \leq 1$ and converges if $p > 1$, the series $\sum_{n=1}^{\infty}\frac{1}{n^p}$ converges if $p > 1$ and diverges if $p \leq 1$ by the <a href="integral-test-for-series-17-05-2023.html">Integral Test</a>.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/ptest.pdf" download="ptest">here</a>.
+                </p>
+                <p>
+                    Related pages:
+                </p>
+                <ul>
+                    <li><a href="integral-test-for-series-17-05-2023.html">Integral Test</a></li>
+                    <li><a href="divergence-of-the-harmonic-series-19-05-2023.html">Harmonic Series</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

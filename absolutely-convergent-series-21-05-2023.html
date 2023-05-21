@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Absolutely Convergent Series</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Absolutely Convergent Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    A series, $\sum a_n$, is said to be absolutely convergent if $\sum_{n=1}^{\infty}|a_n|$. The most important property of absolutely convergent series is that if a series is absolutely convergent, it is also convergent (ie: $\sum_{n=1}^{\infty}|a_n|$ converges $\implies \sum_{n=1}^{\infty}a_n$ converges).
+                </p>
+                <p>
+                    Note that the opposite does not hold.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    Suppose that the infinite sum of $a_n$ is absolutely convergent.
+                </p>
+                <p>
+                    Note that for all $n \in \mathbb{N}$, $0 \leq \left|a_n + |a_n|\right| \leq 2|a_n|$. Because of this, $$0 \leq \left|\sum_{k=1}^{n}(a_k + |a_k|)\right| \leq 2 \sum_{k=1}^{n}|a_k|$$
+                    $$\implies 0 \leq \left|\sum_{k=1}^{n}a_k + \sum_{k=1}^{n}|a_k|\right| \leq 2 \sum_{k=1}^{n}|a_k|$$
+                </p>
+                <p>
+                    Applying the Triangle Inequality gives,
+                    $$\implies 0 \leq \left|\sum_{k=1}^{n}a_k + \sum_{k=1}^{n}|a_k|\right| \leq \left|\sum_{k=1}^{n}a_k\right| + \sum_{k=1}^{n}|a_k| \leq 2 \sum_{k=1}^{n}|a_k|$$
+                    $$\implies 0 \leq \left|\sum_{k=1}^{n}a_k\right|\leq \sum_{k=1}^{n}|a_k|$$
+                    $$\implies 0 \leq \lim_{n\rightarrow\infty}\left|\sum_{k=1}^{n}a_k\right|\leq \lim_{n\rightarrow\infty}\sum_{k=1}^{n}|a_k|$$
+                </p>
+                <p>
+                    We know that the right side of the inequality converges and thus $\left|\sum a_n\right|$ converges. Since $\sum a_n = \pm \left|\sum a_k\right|$, it must also converge.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/absolutelyconvergentseries.pdf" download="absolutelyconvergentseries">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

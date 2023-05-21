@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Boundedness Condition</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Boundedness Condition For Series</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Boundedness Condition for series states that for any $a_n \geq 0$, $\sum_{j=1}^{\infty}a_j$ converges if and only if the sequence of partial sums is bounded ($s_n = \sum_{j=1}^{n}a_j$ is bounded).
+                </p>
+                <p>
+                    The condition also applies for $a_n \leq 0$ since a sequence, $b_n = -a_n$, can be constructed such that $\sum_{j=1}^{\infty}b_n = - \sum_{i=1}^{\infty}a_n$ (this fact will not be proved).
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    Suppose $a_n \geq 0$, and let $s_n$ be the $n$th partial sum of the series where $s_n$ is bounded.
+                </p>
+                <p>
+                    Since $a_n \geq 0$, and $s_{n+1} = s_n + a_n$, $s_n$ must be increasing ($s_{n+1} \geq s_n$). Since $s_n$ is monotonic and bounded, it is a convergent sequence by the Monotone Convergence Theorem (note that this only depends on the existence of an upper bound, although since $a_n \geq 0$ the lower bound exists and is greater than or equal to $0$).
+                </p>
+                <p>
+                    As a result of the convergence of the partial sums, the series must converge.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/boundednesscondition.pdf" download="boundednesscondition">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
