@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Introducing Norms</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Introducing Norms</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    The $\ell^p$ Norms
+                </h2>
+                <p>
+                    The $\ell^p$ Norms are a set of norms on $\mathbb{R}^n$. For $ 1 \leq p < \infty$, the $\ell^p$ Norms are defined as: $$||x||_{\ell^p} := \left(\sum_{j=1}^{n}|x_j|^p\right)^{\frac{1}{p}}$$
+                </p>
+                <p>
+                    The Norm $\ell^{\infty}$ is also defined, being $$||x||_{\ell^{\infty}} := \max_{j=1,...,n}|x_j|$$
+                </p>
+                <p>
+                    This definition comes from the fact that, by the above definitions, $\lim_{p\rightarrow\infty}||x||_{\ell^p} = ||x||_{\ell^{\infty}}$.
+                </p>
+                <p>
+                    To prove that these are indeed norms, they must be tested against the three conditions (discussed in the <a href="introducing-norms-21-05-2023.html">Introducing Norms</a> section).
+                </p>
+                <p>
+                    For the first criterion, for $ 1 \leq p < \infty$, the $\ell^p$ norm can only be zero if $x$ is zero since the sum $\sum_{j=1}^{n}|x_j|$ is increasing. For $p = \infty$, $||x||_{\ell^{\infty}}$ is only zero if $\max_{j=1,...,n}|x_j| = 0$. Since $|x_j| \geq 0$, if $||x||_{\ell^{\infty}} = 0$ then all $|x_j| = 0$, and thus $x = 0$. Therefore, for all $ 1 \leq p \leq \infty$, $||x||_{\ell^p} = 0 \iff x = 0$.
+                </p>
+                <p>
+                    For the second, the proof is very similar to the proof for the Euclidean Norm (Introducing Norms) which is natural as the Euclidean Norm is the $\ell^2$ Norm. First, for $1 \leq p < \infty$. Suppose that $\lambda \in \mathbb{R}$. For all $x\in \mathbb{R}^n$,$$||\lambda x||_{\ell^p} = \left(\sum_{j=1}^{n}|\lambda x_j|^{p}\right)^{\frac{1}{p}}$$
+                    $$\implies ||\lambda x||_{\ell^p} = \left(\sum_{j=1}^{n}|\lambda|^{p}|x_j|^{p}\right)^{\frac{1}{p}}$$
+                    $$\implies ||\lambda x||_{\ell^p} = |\lambda|\left(\sum_{j=1}^{n}|x_j|^{p}\right)^{\frac{1}{p}}$$
+                    $$\implies ||\lambda x||_{\ell^p} = |\lambda|||x||_{\ell^p}$$
+                </p>
+                <p>
+                    Therefore, for $1 \leq p < \infty$, the $\ell^p$ Norms satisfy Homogeneity.
+                </p>
+                <p>
+                    For $p = \infty$, the fact is more direct.$$||\lambda x||_{\ell^{\infty}} = \max_{j=1,...,n}|\lambda x_j|$$
+                    $$\implies ||\lambda x||_{\ell^\infty} = |\lambda| \max_{j=1,...,n}|x_j| = |\lambda| ||x||_{\ell^{\infty}}$$
+                </p>
+                <p>
+                    Therefore, for all $1 \leq p \leq \infty$, the $\ell^p$ Norms satisfy the first two criteria.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Minkowski's Inequality In $\mathbb{R}^n$
+                </h2>
+                <p>
+                    Minkowski's Inequality in $\mathbb{R}^n$ states that for all $1 \leq p \leq \infty$, if $x,y \in \mathbb{R}^n$ then $||x + y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$
+                </p>
+                <p>
+                    Note that Minkowski's Inequality deals with the third criterion for the $\ell^p$ norms.
+                </p>
+                <p>
+                    First, we will consider the case of $p = \infty$. For every $x,y \in \mathbb{R}^{n}$, $$||x + y||_{\ell^{\infty}} = \max_{j=1,...,n}(x_j + y_j)$$
+                    $$\implies ||x + y||_{\ell^{\infty}} \leq \max_{j=1,...,n}x_j + \max_{j=1,...,n}y_j$$
+                    $$\implies ||x + y||_{\ell^{\infty}} \leq ||x||_{\ell^{\infty}} + ||y||_{\ell^{\infty}}$$
+                </p>
+                <p>
+                    Thus Minkowski's Inequality holds for $p = \infty$.
+                </p>
+                <p>
+                    When considering the case of $1 \leq p \< \infty$, let $x,y \in \mathcal{B}$.$$||\lambda x + (1-\lambda)y||_{\ell^p}^p = \sum_{j=1}^{n}|\lambda x_j + (1 - \lambda)y_j|^p$$
+                </p>
+                <p>
+                    Applying the Triangle Inequality (for absolute values), we can see that $$\implies ||\lambda x + (1-\lambda)y||_{\ell^p}^p \leq \sum_{j=1}^{n}(\lambda |x_j|^p + (1 - \lambda)|y_j|^p)$$
+                </p>
+                <p>
+                    Since $x,y\in\mathcal{B}$, $\sum_{j=1}^{n}|x_j|^p \leq 1, \sum_{j=1}^{n}|y_j|^p \leq 1$.$$\implies ||\lambda x + (1 - \lambda)y||_{\ell^p}^p \leq \lambda + (1 - \lambda) = 1$$
+                </p>
+                <p>
+                    Therefore, the Closed Unit Ball, $\mathcal{B}$, is convex. By applying the lemma introduced in <a href="normed-spaces-21-05-2023.html">Normed Spaces</a>, since for $1 \leq p < \infty$ the Closed Unit Ball is convex and the $\ell^p$ Norm meets the first two criteria and thus satisfies the Triangle Identity.
+                </p>
+                <p>
+                    Finally, we can conclude that for all $ 1 \leq p \leq \infty$, for all $x,y\in\mathbb{R}^n$, $||x+y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$ as stated in Minkowski's Inequality.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Conclusion
+                </h2>
+                <p>
+                    Since Minkowski's Inequality holds for all $1 \leq p \leq \infty$ (meaning $||x + y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$), and for all $1 \leq p \leq \infty$ the first two criteria holds. Therefore, for all $1 \leq p \leq \infty$, $||\cdot||_{\ell^p}$ is a norm.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/thelpnorms.pdf" download="thelpnorms">here</a>.
+                </p>
+                <p>
+                    Related Pages:
+                </p>
+                <ul>
+                    <li><a href="introducing-norms-21-05-2023.html">Introducing Norms</a></li>
+                    <li><a href="normed-spaces-21-05-2023.html">Normed Spaces</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
