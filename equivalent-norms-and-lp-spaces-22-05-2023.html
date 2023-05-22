@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Equivalent Norms And lp Spaces</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Equivalent Norms And $\ell^p$ Spaces</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Equivalent Norms
+                </h2>
+                <p>
+                    Two norms, $||\cdot||_{1}, ||\cdot||_{2}$, are said to be equivalent if and only if there exist constants $0 < c_1 \leq c_2$ such that for all $x \in X$ $$c_1 ||x||_{1} \leq ||x||_{2} \leq c_2 ||x||_{1}$$
+                </p>
+                <p>
+                    Alternatively, this can also be written as two norms, $||\cdot||_{1}, ||\cdot||_{2}$, are said to be equivalent if and only if there exist constants $0 < c_1 \leq c_2$ such that $$c_1 \mathcal{B}_{(X, ||\cdot||_2)} \subset \mathcal{B}_{(X, ||\cdot||_1)} \subset c_2 \mathcal{B}_{(X, ||\cdot||_2)}$$
+                </p>
+            </section>
+            <section>
+                <h2>
+                    The $\ell^p$ Sequence Space
+                </h2>
+                <p>
+                    For $ 1 \leq p < \infty$, the $\ell^p$ Sequence Space is defined as the space of all sequences $x = (x_j)_{j=1}^{\infty}$ such that $$\sum_{j=1}^{\infty}|x_j|^p < \infty$$
+                </p>
+                <p>
+                    The $\ell^{\infty}$ Sequence Space is defined as the space of bounded sequences equipped with the $\ell^\infty$ Norm.
+                </p>
+                <p>
+                    Proof that the $\ell^p$ Sequence Space is closed under addition is provided later. A full proof of $\ell^p$ as a vector space is not provided.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Minkowski's Inequality In $\ell^p$
+                </h2>
+                <p>
+                    Minkowski's Inequality In $\ell^p$ states that for all $ 1 \leq p \leq \infty$, if $x,y\in\ell^p$, $x + y \in \ell^p$ and $||x + y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$.
+                </p>
+                <p>
+                    Proving the case for $\ell^\infty$ is simple. For $x,y \in \ell^{\infty}$, $$||x+y||_{\ell^\infty} = \max_{j\in{[1,\infty)}}|x_j + y_j|$$
+                    $$\implies ||x+y||_{\ell^\infty} = \max_{j\in{[1,\infty)}}|x_j| + \max_{j\in{[1,\infty)}}|y_j||$$
+                    $$\implies ||x+y||_{\ell^{\infty}} = ||x||_{\ell^\infty} + ||y||_{\ell^\infty}$$
+                </p>
+                <p>
+                    Therefore Minkowski's Inequality holds for $\ell^\infty$.
+                </p>
+                <p>
+                    For the cases of $1 \leq p < \infty$, consider Minkowski's Inequality In $\mathbb{R}^n$ (seen in <a href="the-lp-norms-22-05-2023.html">The $\ell^p$ Norms</a>). For $x, y \in \mathbb{R}^n$, and $1 \leq p < \infty$, $$||x+y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$$
+                    $$\implies \left(\sum_{j=1}^{n}|x_j+y_j|^p\right)^{\frac{1}{p}} = \left(\sum_{j=1}^{n}|x_j|^p\right)^{\frac{1}{p}} + \left(\sum_{j=1}^{n}|y_j|^p\right)^{\frac{1}{p}}$$
+                </p>
+                <p>
+                    Since $\ell^p$ infinite dimensional and the series of elements of $\ell^p$ are finite, we can take the limit as $n\rightarrow\infty$, meaning that $$\lim_{n\rightarrow\infty}\left(\sum_{j=1}^{n}|x_j+y_j|^p\right)^{\frac{1}{p}} = \lim_{n\rightarrow\infty}\left(\sum_{j=1}^{n}|x_j|^p\right)^{\frac{1}{p}} + \lim_{n\rightarrow\infty}\left(\sum_{j=1}^{n}|y_j|^p\right)^{\frac{1}{p}}$$
+                    $$\implies ||x+y||_{\ell^p} \leq ||x||_{\ell^p} + ||y||_{\ell^p}$$
+                </p>
+                <p>
+                    For all $x,y\in \ell^p$, and thus Minkowski's Inequality holds for $1 \leq p < \infty$. Finally, we can see that for all $1 \leq p \leq \infty$, Minkowski's Inequality In $\ell^p$ holds.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof That $\ell^p$ Is Closed Under Addition
+                </h2>
+                <p>
+                    To prove that $\ell^p$ is closed under addition, for $1 \leq p < \infty$ and $x,y \in \ell^p$, we have that $$\sum_{j=1}^{n}|x_j + y_j|^p \leq \sum_{j=1}^{n}|2\max\{x_j, y_j\}|^p$$
+                    $$\implies \sum_{j=1}^{n}|x_j + y_j|^p \leq 2^p\left(\sum_{j=1}^{n}|\max\{x_j^p, y_j^p\}|\right)$$
+                    $$\implies \sum_{j=1}^{n}|x_j + y_j|^p \leq 2^p\left(\sum_{j=1}^{n}|x_j^p| + \sum_{j=1}^{n}|y_j^p|\right)$$
+                </p>
+                <p>
+                    Taking the limit as $n\rightarrow\infty$, we see that $$\implies \lim_{n\rightarrow\infty}\sum_{j=1}^{n}|x_j + y_j|^p \leq \lim_{n\rightarrow\infty}2^p\left(\sum_{j=1}^{n}|x_j^p| + \sum_{j=1}^{n}|y_j^p|\right)$$
+                </p>
+                <p>
+                    Since the two sums on the right are finite (as $x,y\in \ell^p$), the left side must also be finite, and thus $\sum_{j=1}^{\infty}|x_j+y_j|^p < \infty$ and thus $x+y \in \ell^p$ if $x,y \in\ell^p$ for $1 \leq p < \infty$.
+                </p>
+                <p>
+                    All other conditions are trivial to prove (Additive Commutativity, Associativity, Inverse, and Identity, Multiplicative Closure, Distributivity, and Identity), including the additive closure in the case of $\ell^\infty$.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/equivalentnormsandlpspaces.pdf" download="equivalentnorms">here</a>.
+                </p>
+                <p>
+                    Related Pages:
+                </p>
+                <ul>
+                    <li><a href="the-lp-norms-22-05-2023.html">The $\ell^p$ Norms</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width", initial-scale="1.0" />
-    <title>Introducing Norms</title>
+    <title>The lp Norms</title>
     <link rel="stylesheet" href="css/latex.css" />
 </head>
 <body style="background-color: #FEFBEA;">
@@ -17,7 +17,7 @@
         <h1></h1>
     </div>
     <header>
-        <h1>Introducing Norms</h1>
+        <h1>The $\ell^p$ Norms</h1>
     </header>
     <main>
         <article class="abstract">
@@ -68,15 +68,15 @@
                     Note that Minkowski's Inequality deals with the third criterion for the $\ell^p$ norms.
                 </p>
                 <p>
-                    First, we will consider the case of $p = \infty$. For every $x,y \in \mathbb{R}^{n}$, $$||x + y||_{\ell^{\infty}} = \max_{j=1,...,n}(x_j + y_j)$$
-                    $$\implies ||x + y||_{\ell^{\infty}} \leq \max_{j=1,...,n}x_j + \max_{j=1,...,n}y_j$$
+                    First, we will consider the case of $p = \infty$. For every $x,y \in \mathbb{R}^{n}$, $$||x + y||_{\ell^{\infty}} = \max_{j=1,...,n}|x_j + y_j|$$
+                    $$\implies ||x + y||_{\ell^{\infty}} \leq \max_{j=1,...,n}|x_j| + \max_{j=1,...,n}|y_j|$$
                     $$\implies ||x + y||_{\ell^{\infty}} \leq ||x||_{\ell^{\infty}} + ||y||_{\ell^{\infty}}$$
                 </p>
                 <p>
                     Thus Minkowski's Inequality holds for $p = \infty$.
                 </p>
                 <p>
-                    When considering the case of $1 \leq p \< \infty$, let $x,y \in \mathcal{B}$.$$||\lambda x + (1-\lambda)y||_{\ell^p}^p = \sum_{j=1}^{n}|\lambda x_j + (1 - \lambda)y_j|^p$$
+                    When considering the case of $1 \leq p < \infty$, let $x,y \in \mathcal{B}$.$$||\lambda x + (1-\lambda)y||_{\ell^p}^p = \sum_{j=1}^{n}|\lambda x_j + (1 - \lambda)y_j|^p$$
                 </p>
                 <p>
                     Applying the Triangle Inequality (for absolute values), we can see that $$\implies ||\lambda x + (1-\lambda)y||_{\ell^p}^p \leq \sum_{j=1}^{n}(\lambda |x_j|^p + (1 - \lambda)|y_j|^p)$$
