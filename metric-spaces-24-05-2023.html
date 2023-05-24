@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Metric Spaces</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Metric Spaces</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Metrics And Metric Spaces
+                </h2>
+                <p>
+                    If a Norm is considered a way of measuring the size of a vector, then a Metric is a way of measuring the distance between two points.
+                </p>
+                <p>
+                    A Metric, $d$, on a set $X$ is a map $X\times X \rightarrow \mathbb{R}^{+}$ satisfying the following three conditions:
+                </p>
+                <ol>
+                    <li>
+                        $d(x,y) = 0 \iff x=y$, for all $x,y \in X$
+                    </li>
+                    <li>
+                        $d(x,y) = d(y,x)$, for all $x,y \in X$
+                    </li>
+                    <li>
+                        $d(x,z) \leq d(x,y) + d(y,z)$, for all $x,y,z \in X$
+                    </li>
+                </ol>
+                <p>
+                    Note that the third condition is the Triangle Inequality.
+                </p>
+                <p>
+                    Similar to <li><a href="normed-spaces-21-05-2023.html">Normed Spaces</a></li>, $(X, d)$ denotes a Metric Space.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Norms And Metrics
+                </h2>
+                <p>
+                    Lemma: If $X$ is a vector space and $||\cdot||:X\rightarrow \mathbb{R}$ is a Norm on $X$ then $d(x,y):= ||x-y||$ is a metric on $X$.
+                </p>
+                <p>
+                    First, to prove the first property, if $x=y$, then $x-y = 0$. As seen in the <li><a href="introducing-norms-21-05-2023.html">Introducing Norms</a></li> section, a Norm is zero when its input is zero, and thus $||x-y|| = 0$. If $||x-y||=0$, by the same fact about Norms, $x-y = 0$, and thus $x=y$, proving the first condition.
+                </p>
+                <p>
+                    The second property is trivial to prove since $||x-y|| = ||y-x||$.
+                </p>
+                <p>
+                    Finally, $||x - z|| \leq ||x - y|| + ||y - z||$, by the Triangle Inequality of Norms, and thus all three conditions are satisfied, proving the lemma.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Examples Of Metrics
+                </h2>
+                <p>
+                    The simplest examples of Metrics are those defined by the examples of the $\ell^p$ Norms (on $\mathbb{R}^n$), $$d_p(x,y):= ||x-y||_{\ell^p}$$
+                </p>
+                <p>
+                    The Discrete Metric is the metric defined on any non-empty set, $X$, by $$d(x,y):= \begin{cases} 0, & \text{if } x=y \\ 1, & \text{otherwise}\end{cases}$$
+                </p>
+                <p>
+                    The Sunflower Metric on $\mathbb{R}^2$, $$d(x,y):= \begin{cases} ||x-y||, & \text{if $x$ and $y$ lie on the same straight line that passes through the origin} \\ ||x||+||y||, & \text{otherwise}\end{cases}$$
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/metricspaces.pdf" download="metricspaces">here</a>.
+                </p>
+                <p>
+                    Related Pages:
+                </p>
+                <ul>
+                    <li><a href="introducing-norms-21-05-2023.html">Introducing Norms</a></li>
+                    <li><a href="the-lp-norms-22-05-2023.html">The $\ell^p$ Norms</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
