@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>Integral Transforms</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Introduction To Integral Transforms</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Definition
+                </h2>
+                <p>
+                    An integral transformation of a function, $f(x)$, yields another function, $g(y)$, by $$g(y) = \int_{C}f(x)K(x,y)dx$$
+                </p>
+                <p>
+                    Where $C$ is typically $\mathbb{R}$ or $[0, \infty)$, although it is not limited to these. The function, $K(x,y)$, is known as the Kernel of the Integral Transform.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Examples
+                </h2>
+                <p>
+                    There are many different examples of Integral Transforms, with a few being:
+                </p>
+                <ul>
+                    <li>Fourier Transform</li>
+                    <li>Laplace Transform</li>
+                    <li>Radon Transform</li>
+                    <li>Hilbert Transform</li>
+                    <li>Mellin Transform</li>
+                </ul>
+                <p>
+                    The first two of these will be the main focus of this course. Some of these, such as the Fourier, Laplace, and Mellin Transforms are invertible, but this is not a requirement.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/introductiontointegraltransforms.pdf" download="introintegraltransforms">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
