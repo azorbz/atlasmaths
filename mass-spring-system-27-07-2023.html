@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Mass-Spring System</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Mass-Spring System</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    In this article, we will derive, solve, and non-dimensionalise the equations governing the behaviour of the mass-spring system. The mass-spring system is comprised of a mass attached to the end of a spring. The movement of this spring is dependent on the initial displacement and velocity of the spring. The second-order linear ODE governing this system's behaviour is: $$m \ddot{x} + c \dot{x} + k x = f(t)$$
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Derivation
+                </h2>
+                <p>
+                    There are three forces that will be acting on the system, the first of which is the spring force, $F_s$, which is determined by Hooke's Law. Hooke's Law states that $F_s = - kx$, where $k$ is the spring constant and $x$ is the spring's compression/stretch. The second force is friction, which can be modeled by $F_f = -c v$, where $c$ is a constant. Note that these two forces are negative since friction opposes motion and the spring pulls when the spring is stretched (positively displaced). Since velocity is the derivative of displacement ($x$), we can express friction as $F_f = - c \dot{x}$. Finally, we have external forces not dependent on the displacement, which we shall simply denote by $f(t)$.
+                </p>
+                <p>
+                    Since forces are additive, the total force acting on the system, $F$, is $F = -kx -c \dot{x} + f(t)$. Recalling Newton's second law, $F = ma$, we can write this as $ma = -kx -c \dot{x} + f(t)$. Rewriting $a$ as the second derivative of displacement, we can see that $m \ddot{x} + c \dot{x} + k x = f(t)$.
+                </p>
+                <p>
+                    The function $f(t)$ can be anything, but it is often modeled as $F_0 \cos{(\omega t)}$. For a vertical system where the mass is hanging from the spring, we may wish to have $f(t) = mg$ to represent the force of friction. Note that the particular solution of this ODE would be constant ($x_p = \frac{mg}{k}$), meaning that we can set this to zero by a co-ordinates change (equivalent to changing the point of equilibrium in the system).
+                </p>
+                <p>
+                    Often, friction is negligible in the model. If so the differential equation is written as $\ddot{x} = \frac{k}{m}x$.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Solving The System
+                </h2>
+                <p>
+                    The system is a linear second-order ODE, so the homogeneous solution is simple to find. The auxiliary (characteristic) equation is $m r^2 + c r + k = 0$. Solving this, we get $r = \frac{-c \pm \sqrt(c^2 - 4mk)}{2m}$. If $c^2 > 4mk$, we can express the homogeneous solution as $x_c = A e^{\frac{-c + \sqrt{c^2 - 4mk}}{2m}t} + B e^{\frac{-c - \sqrt(c^2 - 4mk)}{2m}t}$, where $A$ and $B$ are constants that can be solved for with initial conditions. If $c^2 < 4mk$, we can instead write the homogeneous solution as $x_c = e^{\frac{-c}{2m}t}(A \cos{\frac{\sqrt{4mk - c^2}}{2m}t} + B\sin{\frac{\sqrt{4mk - c^2}}{2m}t})$. The first case is called overdamped, the second is underdamped. In addition to those two cases, there is also the critically damped, which is when $c^2 = 4mk$. This case can be expressed like the first, however, it has different properties. Note how in both underdamped and overdamped systems, there is a factor of $e^{-\frac{c}{2m}}$. As $t$ increases, this factor decreases, meaning that the overall displacement is dampened as time increases. This is dependent on $c$ which should be expected as it was the coefficient of friction. The non-homogeneous case can be dealt with by applying standard methods to get a particular solution.
+                </p>
+                <p>
+                    Suppose we have initial conditions $x(0) = x_0$ and $\dot{x}(0) = u_0$. Let us first consider the underdamped case. Since $x = e^{\frac{-c}{2m}t}(A \cos{\frac{\sqrt{4mk - c^2}}{2m}t} + B\sin{\frac{\sqrt{4mk - c^2}}{2m}t})$, we can write the derivative of $x$ as $$\dot{x} = -\frac{c}{2m}x + e^{\frac{-c}{2m}t}(-\frac{\sqrt{4mk - c^2}}{2m}A \sin{\frac{\sqrt{4mk - c^2}}{2m}t} + \frac{\sqrt{4mk - c^2}}{2m}B \cos{\frac{\sqrt{4mk - c^2}}{2m}t})$$
+                </p>
+                <p>
+                    Evaluating both of these at $t=0$ gives $x(0) = x_0 = A$, and $\dot{x}(0) = u_0 = -\frac{c}{2m} x_0 + \frac{\sqrt{4mk - c^2}}{2m}B$. Simplifying these, we get that $A = x_0$ and $B = \frac{c x_0}{\sqrt{4mk - c^2}}$.
+                </p>
+                <p>
+                    For the overdamped case, we have a system of linear equations.
+                </p>
+                <ol>
+                    <li>
+                        $x_0 = A + B$
+                    </li>
+                    <li>
+                        $u_0 = \frac{-c + \sqrt{c^2 - 4mk}}{2m}A + \frac{-c - \sqrt{c^2 - 4mk}}{2m}B$
+                    </li>
+                </ol>
+                <p>
+                    Solving this is straightforward forward so it is left as an exercise.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Non-Dimensionalisation
+                </h2>
+                <p>
+                    In this section, we will non-dimensionalise two cases. The first is the homogeneous case, We wish to convert the variables $x,t$ to new variables $\tilde{x}, \tilde{t}$. To do so, we need to find $x_r$, $x_s$, $t_r$, $t_s$ in terms of $m$, $k$, $c$, $F_0$, and $\omega$ such that they satisfy the relationship $\tilde{x} = \frac{x-x_r}{x_s}$, $\tilde{t} = \frac{t-t_r}{t_s}$. For the purposes of this section, we do not wish to shift the variables, only scale them, so we will set $x_r$ and $t_r$ to zero. We are left with the following relationships: $x_s \tilde{x} = x$ and $t_s \tilde{t} = t$. Substituting these into our original ODE, we get $$m\frac{d}{d(\tilde{t}t_s)}\left(\frac{d(\tilde{x}x_s)}{d(\tilde{t}t_s)}\right) + c \frac{d(\tilde{x}x_s)}{d(\tilde{t}t_s)} + k (\tilde{x}x_s) = 0$$
+                </p>
+                <p>
+                    $$\implies \frac{m x_s}{t_s^2} \frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{cx_s}{t_s} \frac{d\tilde{x}}{d\tilde{t}} + k(\tilde{x}x_s) = 0$$
+                </p>
+                <p>
+                    $$\implies \frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{ct_s}{m} \frac{d\tilde{x}}{d\tilde{t}} + \frac{kt_s^2}{m}\tilde{x} = 0$$
+                </p>
+                <p>
+                    To reduce the number of coefficients, we can set one to $1$. Choosing the latter, we get $\frac{kt_s^2}{m} = 1$, meaning that $t_s = \sqrt{\frac{m}{k}}$. Since there is no $x_s$ in the final equation, we can let $x = \tilde{x}$ (for the purposes of the non-homogeneous case, we shall leave it as $\tilde{x}$). Substituting back into the equation gives us the ODE in non-dimensionalised form: $$\frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{c}{\sqrt{mk}} \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = 0$$
+                </p>
+                <p>
+                    Let us now consider the non-homogenous case, $f(t) = F_0 \cos{\omega t}$. Following through the same steps from before, we get $$\frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{c}{\sqrt{mk}} \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = \frac{F_0 t_s^2}{mx_s}\cos{\omega t_s \tilde{t}}$$
+                </p>
+                <p>
+                    $$\implies \frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{c}{\sqrt{mk}} \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = \frac{F_0}{kx_s}\cos{\omega \sqrt{\frac{m}{k}} \tilde{t}}$$
+                </p>
+                <p>
+                    Taking the coefficient of $\cos{\omega \sqrt{\frac{m}{k}}t}$ and setting it to $1$, we get $\frac{F_0}{kx_s} = 1$, meaning that $\frac{F_0}{k} = x_s$. Substituting this back in results in $$\implies \frac{d^2 \tilde{x}}{d\tilde{t}^2} + \frac{c}{\sqrt{mk}} \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = \cos{\omega \sqrt{\frac{m}{k}} \tilde{t}}$$
+                </p>
+                <p>
+                    Finally, we let $\alpha := \frac{c}{\sqrt{mk}}$ and $\beta := \omega \sqrt{\frac{m}{k}}$ (with $x = \frac{F_0}{k}$ and $t = \sqrt{\frac{m}{k}}$). This leaves us with only two parameters in the equation compared with the original's five. The non-dimensionalised differential equation is then:$$\frac{d^2 \tilde{x}}{d\tilde{t}^2} + \alpha \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = \cos{\beta \tilde{t}}$$
+                </p>
+                <p>
+                    Doing this gives us a better understanding of the relationship between parameters (in a dimensionless group) and how they affect the behaviour of the system.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Video
+                </h2>
+                <p>
+                    Here is a simulation of a damped mass-spring system. It uses the equation for an underdamped system.
+                </p>
+                <video width="400" height="400" controls style="margin-left=auto;margin-right=auto">
+                    <source src="photos/damped-mass-spring-system.mp4" type="video/mp4" />
+                </video>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/massspringsystem.pdf" download="massspringsystem">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
