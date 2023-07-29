@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Separation Of Variables</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>Separation Of Variables</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Method
+                </h2>
+                <p>
+                    Separation of Variables is a method of solving both ODEs and PDEs (this article will focus on ODEs). The method states that for differential equations of the form $\frac{dy}{dx} = f(x)h(y)$, the following is true: $$\int\frac{1}{h(y)} dy = \int f(x) dx$$
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Proof
+                </h2>
+                <p>
+                    To prove this, we will first rewrite the original equation as $\frac{dy}{dx} = f(x) h(y(x))$. Clearly, as long as $h(y) \neq 0$, we can divide both sides by $h(y(x))$ (this is why the original equation is sometimes written as $\frac{dy}{dx} = \frac{f(x)}{h(y)}$) giving $\frac{1}{h(y(x))} \frac{dy}{dx} = f(x)$. Both sides can be integrated with respect to $x$, giving $\int \frac{1}{h(y(x))}\frac{dy}{dx}dx = \int f(x) dx$. Intuitively, we can see that the $dx$s on the left side cancel however this is not rigorous as $\frac{dy}{dx}$ is not a fraction. Instead, consider the substitution $y = y(x)$. Then, by differentiating with respect to $x$, $dy = y'(x)dx$. Since this is with respect to $x$, we can rewrite this as $dy = \frac{dy}{dx}dx$ (this result is a standard use of the inverse chain rule). Finishing the substitution, we get our desired result of $\int \frac{1}{h(y)} dy = \int f(x) dx$.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/separationofvariables.pdf" download="separationofvariables">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
