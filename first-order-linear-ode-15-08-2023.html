@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>First-Order Linear ODEs</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>First-Order Linear ODEs</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Homogeneous Case
+                </h2>
+                <p>
+                    First, let us consider the case of a first-order linear homogeneous ODE, where $\dot{x} + r(t)x = 0$. By rearranging for $\dot{x}$, we can solve this ODE using Separation Of Variables. We see that $\dot{x} = -r(t)x$, and so $\int \frac{1}{x}dx = -\int r(t)dt$. This means that $\ln{|x|} = -\int r(t)dt + C$. Rearranging for $x(t)$, $x(t) = Ae^{-\int r(t) dt}$. We can check that this satisfies the ODE by taking the derivative (via the Chain Rule), giving $\dot{x} = -r(t)x(t)$, or $\dot{x} + r(t)x = 0$, as expected.
+                </p>
+                <p>
+                    This same result can be derived by multiplying the original equation by what is called an "integrating factor", which is $I(t) = e^{\int r(t)dt}$. This results in $e^{\int r(t)dt}\dot{x} + r(t) e^{\int r(t)dt}x = 0$. We can see by the Product Rule that $\frac{d}{dt}\left[e^{\int r(t) dt}x\right] = e^{\int r(t)dt}\dot{x} + r(t) e^{\int r(t)dt}x$. This means that we can simplify the left side of our equation to $\frac{d}{dt}\left[e^{\int r(t)dt}\right] = 0$. Integrating with respect to $t$ gives $e^{\int r(t)dt}x = A$. Dividing through by the integrating factor, we see that $x(t) = Ae^{-\int r(t) dt}$, matching the result obtained using Separation Of Variables.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Non-Homogeneous Case
+                </h2>
+                <p>
+                    For the Non-Homogeneous case, we have that $\dot{x} + r(t) x = g(t)$. This is trickier than the Homogeneous case since we cannot apply Separation Of Variables. Integrating factors are introduced above to suggest an approach to solving the Non-Homogeneous case. Attempting to apply the same method, we get that $e^{\int r(t)dt}\dot{x} + r(t) e^{\int r(t) dt}x = g(t) e^{\int r(t) dt}$. The left side is unchanged from before and so $e^{\int r(t)dt}x = \int e^{\int r(t) dt}g(t)dt + A$. Rearranging for $x(t)$, $x(t) = e^{-\int r(t)dt}\int e^{\int r(t) dt}g(t) dt + Ae^{- \int r(t)dt}$. Note that the right term is simply the solution to the Homogeneous case. This is called the characteristic solution (other terms include homogeneous and complementary solutions). The left term is the particular solution.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/firstorderlinearodes.pdf" download="firstorderlinearodes">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
