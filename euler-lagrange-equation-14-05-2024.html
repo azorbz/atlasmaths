@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
+    <title>The Euler-Lagrange Equation</title>
+    <link rel="stylesheet" href="css/latex.css" />
+</head>
+<body style="background-color: #FEFBEA;">
+    <div id="title">
+        <ul id="title-bar">
+            <li class="title-item"><a class="menu-button" href="index.html">Home</a></li>
+            <li class="title-item"><a class="menu-button" href="resources.html">Resources</a></li>
+            <li class="title-item"><a class="menu-button" href="contact.html">Contact</a></li>
+        </ul>
+        <h1></h1>
+    </div>
+    <header>
+        <h1>The Euler-Lagrange Equation</h1>
+    </header>
+    <main>
+        <article class="abstract">
+            <section>
+                <h2>
+                    Introduction
+                </h2>
+                <p>
+                    The Euler-Lagrange equation is an equation that is satisfied by a critical point of a functional. If $I[y] = \int_{a}^{b}f(x,y,y')dx$ is the functional, its critical point $y(\cdot) \in X$ satisfies the Euler-Lagrange equation, $$\partial_{y}f = \frac{d}{dx}\left[\partial_{y'}f\right]$$
+                </p>
+            </section>
+            <section>
+                <h2>Proof</h2>
+                <p>
+                    Recall that the first variation of a functional is defined by $\delta I[y]\eta = \frac{d}{ds}I[y]|_{s=0}$
+                </p>
+                <p>
+                    $$\implies \delta I[y]\eta = \int_{a}^{b} \frac{\partial}{\partial s} f(x, y+s\eta, y'+s\eta')dx|_{s=0}$$
+
+                    $$\implies \delta I[y]\eta = \int_{a}^{b} \frac{\partial f}{\partial y}\eta + \frac{\partial f}{\partial y'} \eta'dx$$
+                </p>
+                <p>
+                    We can now integrate the second term by parts. $u=\frac{\partial f}{\partial y'}$, $v' = \eta'$
+                </p>
+                <p>
+                    $$\implies \delta I[y]\eta = \left[\frac{\partial f}{\partial y'} \eta(x)\right]_{x=a}^{b} + \int_{a}^{b} \eta(x)\left(\frac{\partial f}{\partial y} - \frac{d}{dx}\left[\frac{\partial f}{\partial y'}\right]\right)dx$$
+                </p>
+                <p>
+                    Since $\eta \in H$, the first term is $0$.
+                </p>
+                <p>
+                    $$\implies \delta I[y]\eta = \int_{a}^{b} \eta(x)\left(\frac{\partial f}{\partial y} - \frac{d}{dx}\left[\frac{\partial f}{\partial y'}\right]\right)dx$$
+                </p>
+                <p>
+                    Recall that, if $y(\cdot)$ is a critical point of $I$ if $\delta I[y]\eta = 0$ for all $\eta(\cdot) \in H$. If $y$ is a critical point of $I$, we therefore have:
+                </p>
+                <p>
+                    $$\implies 0 = \int_{a}^{b} \eta(x)\left(\frac{\partial f}{\partial y} - \frac{d}{dx}\left[\frac{\partial f}{\partial y'}\right]\right)dx$$
+                </p>
+                <p>
+                    Since $\eta(\cdot)$ is an arbitrary element of the Space of Variations, $H$, we can apply the Fundamental Lemma of the Calculus of Variations,
+                </p>
+                <p>
+                    $$\implies 0 = \frac{\partial f}{\partial y} - \frac{d}{dx}\left[\frac{\partial f}{\partial y'}\right]$$
+
+                    $$\implies \frac{\partial f}{\partial y} = \frac{d}{dx}\left[\frac{\partial f}{\partial y'}\right]$$
+                </p>
+                <p>
+                    This is the Euler-Lagrange equation. The solution to this PDE that also satisfies the boundary conditions of the initial problem, is a minimiser of the problem.
+                </p>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <p>
+                    To download this webpage as a pdf, click <a href="downloads/eulerlagrangeequation.pdf" download="beltramipdf">here</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"]]
+            }
+        }
+    </script>
+</body>
+</html>
